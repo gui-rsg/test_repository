@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>测试网页</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">测试网页</div>
+    <script>
+        const textDom = document.getElementById('text');
+        let clickCount = 0;
+        document.body.addEventListener('click', () => {
+            clickCount++;
+            textDom.innerText = `测试网页，已点击${clickCount}次`;
+            // 随机背景色
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            document.body.style.backgroundColor = `rgb(${r},${g},${b})`;
+        });
+    </script>
+</body>
+</html>
